@@ -6,6 +6,13 @@ local speeds = {
   fast = 0.100,
   veryfast = 0.200,
 }
+local pallette = {
+  pastel = 1,
+  light = 64,
+  default = 128,
+  vibrant = 192,
+  deep = 255,
+}
 
 script.on_nth_tick(10, function(event)
   for every, player in pairs(game.connected_players) do
@@ -24,6 +31,7 @@ script.on_nth_tick(10, function(event)
         r = math.sin(frequency*((tick/nth_tick)+(index*10))+(0*math.pi/3))*127+128,
         g = math.sin(frequency*((tick/nth_tick)+(index*10))+(2*math.pi/3))*127+128,
         b = math.sin(frequency*((tick/nth_tick)+(index*10))+(4*math.pi/3))*127+128,
+        a = pallette[settings.global["rainbow-character-palette"].value],
       }
       player.color = rainbow
     end
