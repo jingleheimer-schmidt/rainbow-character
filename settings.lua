@@ -13,6 +13,21 @@ local rainbowSpeedSetting = {
   }
 }
 
+local rainbowPaletteSetting = {
+  type = "string-setting",
+  name = "rainbow-character-palette",
+  setting_type = "runtime-global",
+  default_value = "default",
+  allowed_values = {
+    "pastel",
+    "light",
+    "default",
+    "vibrant",
+    "deep"
+  }
+}
+
 data:extend({
-  rainbowSpeedSetting
+  rainbowSpeedSetting,
+  rainbowPaletteSetting
 })
