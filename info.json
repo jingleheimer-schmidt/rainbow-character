@@ -1,0 +1,13 @@
+{
+  "name": "rainbow-character",
+  "version": "0.0.1",
+  "title": "Rainbow Character",
+  "author": "asher_sky",
+  "contact": "",
+  "homepage": "",
+  "description": "automatically cycles player colors through the rainbow",
+  "factorio_version": "1.1",
+  "dependencies": [
+	"base"
+	]
+}
