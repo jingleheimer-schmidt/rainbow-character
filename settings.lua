@@ -16,7 +16,7 @@ local rainbowSpeedSetting = {
 local rainbowPaletteSetting = {
   type = "string-setting",
   name = "rainbow-character-palette",
-  setting_type = "runtime-global",
+  setting_type = "runtime-per-user",
   default_value = "default",
   allowed_values = {
     "pastel",
