@@ -14,7 +14,7 @@ local palette = {
   deep = 255,
 }
 
-script.on_nth_tick(10, function(event)
+script.on_nth_tick(5, function(event)
   for _, player in pairs(game.connected_players) do
     local index = player.index
     local nth_tick = event.nth_tick
