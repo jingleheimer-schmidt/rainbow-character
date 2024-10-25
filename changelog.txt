@@ -1,4 +1,17 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: ????
+  Changes:
+    - added changelog for 1.0.0
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 24OCT2024
+  Changes:
+    - added support for Factorio 2.0
+    - refactored control code
+    - renamed color palettes to color themes
+    - added additional color themes for pride and country flags
+---------------------------------------------------------------------------------------------------
 Version: 0.0.2
 Date: 01DEC2021
   Changes:
