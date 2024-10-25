@@ -3,6 +3,7 @@ Version: 1.0.1
 Date: ????
   Changes:
     - added changelog for 1.0.0
+    - added description
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.0
 Date: 24OCT2024
