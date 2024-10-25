@@ -4,6 +4,7 @@ Date: ????
   Changes:
     - added changelog for 1.0.0
     - added description
+    - simplified variable assignment and control logic
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.0
 Date: 24OCT2024
