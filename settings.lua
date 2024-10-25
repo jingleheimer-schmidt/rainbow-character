@@ -1,5 +1,5 @@
 
-local rainbowSpeedSetting = {
+local rainbow_speed = {
     type = "string-setting",
     name = "rainbow-speed",
     setting_type = "runtime-per-user",
@@ -14,7 +14,7 @@ local rainbowSpeedSetting = {
     }
 }
 
-local rainbowPaletteSetting = {
+local rainbow_palette = {
     type = "string-setting",
     name = "rainbow-character-palette",
     setting_type = "runtime-per-user",
@@ -29,6 +29,6 @@ local rainbowPaletteSetting = {
 }
 
 data:extend({
-    rainbowSpeedSetting,
-    rainbowPaletteSetting
+    rainbow_speed,
+    rainbow_palette
 })
