@@ -329,16 +329,13 @@ local function on_nth_tick(event)
         local player_settings = settings.get_player_settings(player_index)
         local speed = player_settings["rainbow-character-speed"].value --[[@as string]]
         local theme = player_settings["rainbow-character-theme"].value --[[@as string]]
-        if speed == "off" then
-            goto next_player
-        else
+        if speed ~= "off" then
             local color = get_rainbow_color(tick, player_index, speed, theme)
             player.color = color
             if player_settings["rainbow-character-sync-chat-color"].value then
                 player.chat_color = color
             end
         end
-        ::next_player::
     end
 end
 
