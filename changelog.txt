@@ -5,6 +5,7 @@ Date: ????
     - added changelog for 1.0.0
     - added description
     - simplified variable assignment and control logic
+    - add interpolation for color themes
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.0
 Date: 24OCT2024
