@@ -21,5 +21,5 @@ There are currently no known mod compatibility issues. To report a compatibility
 
 ------------
 #License
-Rainbow Character © 2024 by asher_sky is licensed under Attribution-NonCommercial-ShareAlike 4.0 International.
+Rainbow Character © 2020-2025 by asher_sky is licensed under Attribution-NonCommercial-ShareAlike 4.0 International.
 To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/
