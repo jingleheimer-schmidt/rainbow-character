@@ -305,8 +305,8 @@ local function get_rainbow_color(tick, player_index, speed, theme_name)
     local continuous_theme = continuous_themes[theme_name]
     local stepwise_theme = stepwise_themes[theme_name]
     if continuous_theme then
-        local amplitude = continuous_theme and continuous_theme.amplitude
-        local center = continuous_theme and continuous_theme.center
+        local amplitude = continuous_theme.amplitude
+        local center = continuous_theme.center
         return {
             r = sin(modifier + pi_0) * amplitude + center,
             g = sin(modifier + pi_2) * amplitude + center,
@@ -314,8 +314,38 @@ local function get_rainbow_color(tick, player_index, speed, theme_name)
             a = 255,
         }
     elseif stepwise_theme then
-        local index = floor(modifier % (#stepwise_theme)) + 1
-        return stepwise_theme[index]
+        -- Handle stepwise themes
+        local sharpness = 0.8
+        local count = #stepwise_theme
+        if count == 0 then
+            return { 1, 1, 1 } -- Default to white if the theme is empty
+        end
+
+        -- Determine the current base and next indices
+        local base_index = floor(modifier % count) + 1
+        local next_index = (base_index % count) + 1
+
+        -- Time within the current step (0 to 1)
+        local step_time = modifier % 1
+
+        -- Adjust interpolation timing based on sharpness
+        local t
+        if step_time < sharpness then
+            t = 0 -- Hold the base color
+        else
+            t = (step_time - sharpness) / (1 - sharpness) -- Smoothly interpolate at the end
+        end
+
+        -- Base and next colors
+        local base_color = stepwise_theme[base_index]
+        local next_color = stepwise_theme[next_index]
+
+        -- Interpolate only when transitioning
+        return {
+            r = base_color.r * (1 - t) + next_color.r * t,
+            g = base_color.g * (1 - t) + next_color.g * t,
+            b = base_color.b * (1 - t) + next_color.b * t,
+        }
     else
         return { 1, 1, 1 }
     end
@@ -329,16 +359,13 @@ local function on_nth_tick(event)
         local player_settings = settings.get_player_settings(player_index)
         local speed = player_settings["rainbow-character-speed"].value --[[@as string]]
         local theme = player_settings["rainbow-character-theme"].value --[[@as string]]
-        if speed == "off" then
-            goto next_player
-        else
+        if speed ~= "off" then
             local color = get_rainbow_color(tick, player_index, speed, theme)
             player.color = color
             if player_settings["rainbow-character-sync-chat-color"].value then
                 player.chat_color = color
             end
         end
-        ::next_player::
     end
 end
 

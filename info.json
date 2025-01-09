@@ -1,6 +1,6 @@
 {
     "name": "rainbow-character",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "title": "Rainbow Character",
     "author": "asher_sky",
     "contact": "",
@@ -9,5 +9,9 @@
     "factorio_version": "2.0",
     "dependencies": [
         "base"
-    ]
+    ],
+    "package": {
+        "sync_portal_details": true,
+        "readme": "readme.md"
+    }
 }
